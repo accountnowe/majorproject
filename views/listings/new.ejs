@@ -1,0 +1,46 @@
+<%- layout("/layouts/boilerplate") %>
+
+  <div class="row mt-3">
+    <div class="col-8 offset-2">
+      <h3 class="mb-4 font-weight-bold">Create New Listing</h3>
+
+      <form method="post" action="/listings" class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="title" class="form-label font-weight-bold">Title</label>
+          <input name="listing[title]" placeholder="Enter a catchy title" type="text" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label font-weight-bold">Description</label>
+          <textarea name="listing[description]" placeholder="Describe the place" class="form-control"
+            required></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label font-weight-bold">Image URL</label>
+          <input name="listing[image][url]" placeholder="Enter image link/URL" type="text" class="form-control" />
+        </div>
+
+        <div class="row">
+          <div class="mb-3 col-md-4">
+            <label for="price" class="form-label font-weight-bold">Price</label>
+            <input name="listing[price]" placeholder="1200" type="number" class="form-control" required />
+          </div>
+
+          <div class="mb-3 col-md-8">
+            <label for="country" class="form-label font-weight-bold">Country</label>
+            <input name="listing[country]" placeholder="India" type="text" class="form-control" required />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="location" class="form-label font-weight-bold">Location</label>
+          <input name="listing[location]" placeholder="Jaipur, Rajasthan" type="text" class="form-control" required />
+        </div>
+
+        <button class="btn btn-stylish w-100 mt-3 py-2">
+          Create Listing
+        </button>
+      </form>
+    </div>
+  </div>

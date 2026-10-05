@@ -1,0 +1,80 @@
+<%- layout("/layouts/boilerplate") %>
+
+    <div class="row justify-content-center mt-5 pt-4">
+        <div class="col-md-5 col-lg-4">
+            <div class="login-card shadow-lg p-5 rounded-4 bg-white">
+                <div class="text-center mb-4">
+                    <i class="fa-regular fa-compass fa-3x" style="color: var(--primary);"></i>
+                    <h3 class="font-weight-bold mt-3" style="letter-spacing: -1px;">Welcome Back</h3>
+                    <p class="text-muted small">Sign in to continue to Wanderlust</p>
+                </div>
+
+                <% if (typeof error !=='undefined' && error) { %>
+                    <div class="alert alert-danger py-2 rounded-3 mb-4" role="alert">
+                        <i class="fas fa-exclamation-circle mr-2"></i>
+                        <%= error %>
+                    </div>
+                    <% } %>
+
+                        <form id="loginForm" action="/login" method="POST" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="email" class="form-label font-weight-bold small">Email or Username</label>
+                                <input type="text" id="email" name="email" class="form-control py-3"
+                                    placeholder="admin@wanderlust.com" required>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="password" class="form-label font-weight-bold small">Password</label>
+                                <input type="password" id="password" name="password" class="form-control py-3"
+                                    placeholder="••••••••" required>
+                            </div>
+
+                            <button id="loginBtn" class="btn btn-stylish w-100 py-3" type="submit">
+                                <span id="btnText">Sign In</span>
+                                <span id="spinner" class="spinner-border spinner-border-sm d-none ml-2" role="status"
+                                    aria-hidden="true"></span>
+                            </button>
+                        </form>
+
+                        <div class="text-center mt-4">
+                            <a href="#" class="text-muted small" style="text-decoration: none;">Forgot password?</a>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="text-center">
+                            <p class="text-muted mb-0 small">Don't have an account? <a href="#"
+                                    style="color: var(--primary); font-weight: 600; text-decoration: none;">Sign up</a>
+                            </p>
+                        </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .login-card {
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .login-card .form-control {
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .login-card .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 56, 92, 0.15);
+        }
+    </style>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function () {
+            var btn = document.getElementById('loginBtn');
+            var spinner = document.getElementById('spinner');
+            var btnText = document.getElementById('btnText');
+            btn.disabled = true;
+            btnText.textContent = 'Signing in...';
+            spinner.classList.remove('d-none');
+        });
+    </script>

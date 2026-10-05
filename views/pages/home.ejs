@@ -1,0 +1,126 @@
+<%- layout("/layouts/boilerplate") %>
+
+    <style>
+        .hero-section {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            border-radius: 24px;
+            overflow: hidden;
+            margin: 1rem 0 4rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.7);
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease both;
+        }
+
+        .featured-tag {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+    </style>
+
+    <div class="hero-section">
+        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=2080&auto=format&fit=crop"
+            class="hero-img" alt="Luxury escape">
+        <div class="hero-content">
+            <span class="featured-tag">Curated Experiences</span>
+            <h1>Escape to the Extraordinary</h1>
+            <p>Discover unique homes, unforgettable stays, and hidden gems across the globe.</p>
+            <a href="/listings" class="btn btn-stylish py-3 px-5" style="font-size: 1.1rem; border-radius: 12px;">Start
+                Exploring</a>
+        </div>
+    </div>
+
+    <div class="section-header d-flex justify-content-between align-items-end mb-4">
+        <div>
+            <h2 class="font-weight-bold" style="letter-spacing: -1px;">Nearby Destinatons</h2>
+            <p class="text-muted">Popular places to stay near you</p>
+        </div>
+        <a href="/listings" class="text-dark font-weight-bold mb-3" style="text-decoration: underline;">View all</a>
+    </div>
+
+    <div class="row row-cols-lg-4 row-cols-md-2 row-cols-1 g-4 mb-5">
+        <!-- Static placeholders that look local -->
+        <div class="col">
+            <div class="listing-card">
+                <div class="card-img-container" style="padding-top: 130%;">
+                    <img src="https://images.unsplash.com/photo-1580587767303-9bb8f964467d?q=80&w=800"
+                        class="card-img-top" alt="Hills">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Misty Mountains</h5>
+                    <p class="text-muted">Himachal Pradesh</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="listing-card">
+                <div class="card-img-container" style="padding-top: 130%;">
+                    <img src="https://images.unsplash.com/photo-1544984243-ec57ea16fe25?q=80&w=800" class="card-img-top"
+                        alt="Beach">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Azure Shores</h5>
+                    <p class="text-muted">Goa Coast</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="listing-card">
+                <div class="card-img-container" style="padding-top: 130%;">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=800"
+                        class="card-img-top" alt="Urban">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Urban Oasis</h5>
+                    <p class="text-muted">Mumbai Skyline</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="listing-card">
+                <div class="card-img-container" style="padding-top: 130%;">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=800"
+                        class="card-img-top" alt="Desert">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Golden Sands</h5>
+                    <p class="text-muted">Rajasthan Desert</p>
+                </div>
+            </div>
+        </div>
+    </div>

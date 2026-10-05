@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-md navbar-light bg-white border-bottom sticky-top">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <a class="navbar-brand d-flex align-items-center" href="/" style="text-decoration: none !important;">
+      <i class="fa-regular fa-compass" style="color: #FF385C !important;"></i>
+      <span class="d-none d-sm-inline font-weight-bold ml-2"
+        style="color: #FF385C !important; letter-spacing: -1.5px; font-size: 1.6rem;">wanderlust</span>
+    </a>
+
+    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ml-auto align-items-center">
+        <a class="nav-item nav-link" href="/">Home</a>
+        <a class="nav-item nav-link" href="/listings">Explore</a>
+        <a class="nav-item nav-link" href="/about">About Us</a>
+        <a class="nav-item nav-link" href="/listings/new">Airbnb your home</a>
+        <% if (typeof currentUser !=='undefined' && currentUser) { %>
+          <a class="nav-item nav-link" href="/dashboard" style="font-weight: 600; color: var(--primary) !important;"><i
+              class="fas fa-user-circle mr-1"></i>
+            <%= currentUser.name %>
+          </a>
+          <a class="nav-item nav-link" href="/logout" style="font-weight: 600;">Logout</a>
+          <% } else { %>
+            <a class="nav-item nav-link py-0" href="/login"><i class="fa-solid fa-circle-user"
+                style="font-size: 1.8rem; color: #717171;"></i></a>
+            <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

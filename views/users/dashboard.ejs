@@ -1,0 +1,27 @@
+<%- layout("/layouts/boilerplate") %>
+
+    <div class="row justify-content-center mt-5 pt-4">
+        <div class="col-md-8 col-lg-6">
+            <div class="dashboard-card shadow-lg p-5 rounded-4 bg-white text-center">
+                <i class="fas fa-check-circle fa-4x mb-4" style="color: #28a745;"></i>
+                <h2 class="font-weight-bold mb-3">Welcome, <%= user.name %>!</h2>
+                <p class="text-muted mb-4">You are successfully logged in to your Wanderlust account.</p>
+
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="/listings" class="btn btn-stylish px-5 py-3 mr-3">
+                        <i class="fas fa-home mr-2"></i>Explore Listings
+                    </a>
+                    <a href="/logout" class="btn btn-dark px-5 py-3" style="border-radius: 12px; font-weight: 700;">
+                        <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .dashboard-card {
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            animation: fadeInUp 0.5s ease-out;
+        }
+    </style>

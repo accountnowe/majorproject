@@ -1,0 +1,55 @@
+<%- layout("/layouts/boilerplate") %>
+
+  <div class="row pt-4">
+    <div class="col-lg-8 offset-lg-2">
+      <h2 class="font-weight-bold mb-4" style="letter-spacing: -1px;">
+        <%= listing.title %>
+      </h2>
+
+      <div class="show-card">
+        <div class="show-img-container shadow-lg mb-4">
+          <img src="<%= listing.image.url %>" class="show-img" alt="<%= listing.title %>">
+        </div>
+
+        <div class="row">
+          <div class="col-md-8">
+            <p class="text-muted mb-2">
+              <%= listing.location %>, <%= listing.country %>
+            </p>
+            <p class="listing-description text-dark" style="font-size: 1.1rem; line-height: 1.6;">
+              <%= listing.description %>
+            </p>
+
+            <div class="pricing-card p-4 mt-4 bg-light rounded-4 border shadow-sm">
+              <h4 class="font-weight-bold mb-0">
+                &#8377; <%= listing.price ? listing.price.toLocaleString("en-IN") : "0" %>
+                  <span class="text-muted font-weight-normal" style="font-size: 1rem;">/ night</span>
+              </h4>
+            </div>
+
+            <div class="d-flex gap-3 mt-5 pt-4 border-top">
+              <a href="/listings/<%= listing._id %>/edit" class="btn btn-stylish px-5 mr-3">
+                Edit Listing
+              </a>
+
+              <form method="post" action="/listings/<%= listing._id %>?_method=DELETE" class="m-0">
+                <button type="submit" class="btn btn-dark py-3 px-5 shadow-sm"
+                  style="border-radius: 12px; font-weight: 700;">
+                  Delete listing
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <!-- Placeholder for extra details/booking sidebar -->
+            <div class="p-4 rounded-4 shadow-sm border bg-white sticky-top" style="top: 100px;">
+              <h5 class="font-weight-bold mb-3">Booking Information</h5>
+              <p class="text-muted small">Select dates to see total price including taxes and fees.</p>
+              <button class="btn btn-stylish w-100 py-3 mt-2" disabled>Reserve (Coming Soon)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

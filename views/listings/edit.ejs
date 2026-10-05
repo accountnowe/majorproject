@@ -1,0 +1,51 @@
+<%- layout("/layouts/boilerplate") %>
+
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+            <h3 class="mb-4 font-weight-bold">Edit Listing</h3>
+
+            <form method="post" action="/listings/<%= listing._id %>?_method=PUT" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="title" class="form-label font-weight-bold">Title</label>
+                    <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control"
+                        required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label font-weight-bold">Description</label>
+                    <textarea name="listing[description]" class="form-control"
+                        required><%= listing.description %></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label font-weight-bold">Image URL</label>
+                    <input name="listing[image][url]" value="<%= listing.image.url %>" type="text"
+                        class="form-control" />
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label for="price" class="form-label font-weight-bold">Price</label>
+                        <input name="listing[price]" value="<%= listing.price %>" type="number" class="form-control"
+                            required />
+                    </div>
+
+                    <div class="mb-3 col-md-8">
+                        <label for="country" class="form-label font-weight-bold">Country</label>
+                        <input name="listing[country]" value="<%= listing.country %>" type="text" class="form-control"
+                            required />
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label font-weight-bold">Location</label>
+                    <input name="listing[location]" value="<%= listing.location %>" type="text" class="form-control"
+                        required />
+                </div>
+
+                <button class="btn btn-stylish w-100 mt-3 py-2">
+                    Save Changes
+                </button>
+            </form>
+        </div>
+    </div>
